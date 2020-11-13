@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test following render when api is down 1`] = `
+<Styled(Container)>
+  <LoadingTheme
+    visibility={true}
+  />
+  <CustomerHeader
+    navigation={
+      Object {
+        "addListener": [Function],
+      }
+    }
+    setFilterCriteriaHandler={[Function]}
+    title="Follower"
+  />
+  <Styled(Content)>
+    <Styled(List)>
+      <Styled(ListItem)
+        avatar={true}
+        key="0"
+      >
+        <Styled(Left)>
+          <ForwardRef
+            onPress={[Function]}
+          >
+            <Styled(Thumbnail)
+              source={
+                Object {
+                  "uri": "",
+                }
+              }
+            />
+          </ForwardRef>
+        </Styled(Left)>
+        <Styled(Body)>
+          <ForwardRef
+            onPress={[Function]}
+          >
+            <Styled(Text) />
+          </ForwardRef>
+          <Styled(Text)
+            note={true}
+          />
+        </Styled(Body)>
+      </Styled(ListItem)>
+    </Styled(List)>
+  </Styled(Content)>
+</Styled(Container)>
+`;
+
+exports[`test following render when api returns bad format data 1`] = `
+<Styled(Container)>
+  <LoadingTheme
+    visibility={true}
+  />
+  <CustomerHeader
+    navigation={
+      Object {
+        "addListener": [Function],
+      }
+    }
+    setFilterCriteriaHandler={[Function]}
+    title="Follower"
+  />
+  <Styled(Content)>
+    <Styled(List)>
+      <Styled(ListItem)
+        avatar={true}
+        key="0"
+      >
+        <Styled(Left)>
+          <ForwardRef
+            onPress={[Function]}
+          >
+            <Styled(Thumbnail)
+              source={
+                Object {
+                  "uri": "",
+                }
+              }
+            />
+          </ForwardRef>
+        </Styled(Left)>
+        <Styled(Body)>
+          <ForwardRef
+            onPress={[Function]}
+          >
+            <Styled(Text) />
+          </ForwardRef>
+          <Styled(Text)
+            note={true}
+          />
+        </Styled(Body)>
+      </Styled(ListItem)>
+    </Styled(List)>
+  </Styled(Content)>
+</Styled(Container)>
+`;
+
+exports[`test following renders correctly 1`] = `
+<Styled(Container)>
+  <LoadingTheme
+    visibility={true}
+  />
+  <CustomerHeader
+    navigation={
+      Object {
+        "addListener": [Function],
+      }
+    }
+    setFilterCriteriaHandler={[Function]}
+    title="Follower"
+  />
+  <Styled(Content)>
+    <Styled(List)>
+      <Styled(ListItem)
+        avatar={true}
+        key="0"
+      >
+        <Styled(Left)>
+          <ForwardRef
+            onPress={[Function]}
+          >
+            <Styled(Thumbnail)
+              source={
+                Object {
+                  "uri": "",
+                }
+              }
+            />
+          </ForwardRef>
+        </Styled(Left)>
+        <Styled(Body)>
+          <ForwardRef
+            onPress={[Function]}
+          >
+            <Styled(Text) />
+          </ForwardRef>
+          <Styled(Text)
+            note={true}
+          />
+        </Styled(Body)>
+      </Styled(ListItem)>
+    </Styled(List)>
+  </Styled(Content)>
+</Styled(Container)>
+`;

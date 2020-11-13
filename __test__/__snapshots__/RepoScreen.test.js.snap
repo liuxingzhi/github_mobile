@@ -1,0 +1,424 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test repo render when api is down 1`] = `
+<Styled(Container)>
+  <CustomerHeader
+    navigation={
+      Object {
+        "addListener": [Function],
+      }
+    }
+    setFilterCriteriaHandler={[Function]}
+    title="Repositories"
+  />
+  <LoadingTheme
+    visibility={true}
+  />
+  <Styled(Content)
+    padder={true}
+  >
+    <Styled(Card)>
+      <Styled(CardItem)
+        bordered={true}
+        header={true}
+        key="header[object Object]"
+        style={
+          Object {
+            "borderBottomWidth": 0,
+            "flexWrap": "wrap",
+          }
+        }
+      >
+        <ForwardRef
+          onPress={[Function]}
+          style={
+            Object {
+              "flex": 3.2,
+            }
+          }
+        >
+          <Styled(Text) />
+        </ForwardRef>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Styled(Icon)
+            name="staro"
+            style={
+              Object {
+                "marginLeft": 30,
+              }
+            }
+            type="AntDesign"
+          />
+          <Styled(Text)
+            style={
+              Object {
+                "color": "#000000",
+                "marginTop": 4,
+              }
+            }
+          >
+            0
+          </Styled(Text)>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "marginLeft": 50,
+              "marginRight": -10,
+            }
+          }
+        >
+          <Styled(Icon)
+            name="code-fork"
+            type="FontAwesome"
+          />
+          <Styled(Text)
+            style={
+              Object {
+                "color": "#000000",
+                "marginLeft": -7,
+                "marginTop": 4,
+              }
+            }
+          >
+            0
+          </Styled(Text)>
+        </View>
+      </Styled(CardItem)>
+      <Styled(CardItem)
+        key="body[object Object]"
+      >
+        <Styled(Text)>
+          No description
+        </Styled(Text)>
+      </Styled(CardItem)>
+      <Styled(CardItem)
+        bordered={true}
+        footer={true}
+        key="footer[object Object]"
+        style={
+          Object {
+            "borderTopWidth": 0,
+          }
+        }
+      >
+        <Styled(Left)>
+          <Styled(Icon)
+            name="primitive-dot"
+            style={
+              Object {
+                "color": "#FFFFFF",
+              }
+            }
+            type="Octicons"
+          />
+          <Styled(Text)>
+            unknown
+          </Styled(Text)>
+        </Styled(Left)>
+        <Styled(Right)>
+          <Styled(Text)>
+            last updated
+          </Styled(Text)>
+          <TimeAgo
+            hideAgo={false}
+            interval={60000}
+            time={Date { NaN }}
+          />
+        </Styled(Right)>
+      </Styled(CardItem)>
+    </Styled(Card)>
+  </Styled(Content)>
+</Styled(Container)>
+`;
+
+exports[`test repo render when api returns bad format data 1`] = `
+<Styled(Container)>
+  <CustomerHeader
+    navigation={
+      Object {
+        "addListener": [Function],
+      }
+    }
+    setFilterCriteriaHandler={[Function]}
+    title="Repositories"
+  />
+  <LoadingTheme
+    visibility={true}
+  />
+  <Styled(Content)
+    padder={true}
+  >
+    <Styled(Card)>
+      <Styled(CardItem)
+        bordered={true}
+        header={true}
+        key="header[object Object]"
+        style={
+          Object {
+            "borderBottomWidth": 0,
+            "flexWrap": "wrap",
+          }
+        }
+      >
+        <ForwardRef
+          onPress={[Function]}
+          style={
+            Object {
+              "flex": 3.2,
+            }
+          }
+        >
+          <Styled(Text) />
+        </ForwardRef>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Styled(Icon)
+            name="staro"
+            style={
+              Object {
+                "marginLeft": 30,
+              }
+            }
+            type="AntDesign"
+          />
+          <Styled(Text)
+            style={
+              Object {
+                "color": "#000000",
+                "marginTop": 4,
+              }
+            }
+          >
+            0
+          </Styled(Text)>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "marginLeft": 50,
+              "marginRight": -10,
+            }
+          }
+        >
+          <Styled(Icon)
+            name="code-fork"
+            type="FontAwesome"
+          />
+          <Styled(Text)
+            style={
+              Object {
+                "color": "#000000",
+                "marginLeft": -7,
+                "marginTop": 4,
+              }
+            }
+          >
+            0
+          </Styled(Text)>
+        </View>
+      </Styled(CardItem)>
+      <Styled(CardItem)
+        key="body[object Object]"
+      >
+        <Styled(Text)>
+          No description
+        </Styled(Text)>
+      </Styled(CardItem)>
+      <Styled(CardItem)
+        bordered={true}
+        footer={true}
+        key="footer[object Object]"
+        style={
+          Object {
+            "borderTopWidth": 0,
+          }
+        }
+      >
+        <Styled(Left)>
+          <Styled(Icon)
+            name="primitive-dot"
+            style={
+              Object {
+                "color": "#FFFFFF",
+              }
+            }
+            type="Octicons"
+          />
+          <Styled(Text)>
+            unknown
+          </Styled(Text)>
+        </Styled(Left)>
+        <Styled(Right)>
+          <Styled(Text)>
+            last updated
+          </Styled(Text)>
+          <TimeAgo
+            hideAgo={false}
+            interval={60000}
+            time={Date { NaN }}
+          />
+        </Styled(Right)>
+      </Styled(CardItem)>
+    </Styled(Card)>
+  </Styled(Content)>
+</Styled(Container)>
+`;
+
+exports[`test repo renders correctly 1`] = `
+<Styled(Container)>
+  <CustomerHeader
+    navigation={
+      Object {
+        "addListener": [Function],
+      }
+    }
+    setFilterCriteriaHandler={[Function]}
+    title="Repositories"
+  />
+  <LoadingTheme
+    visibility={true}
+  />
+  <Styled(Content)
+    padder={true}
+  >
+    <Styled(Card)>
+      <Styled(CardItem)
+        bordered={true}
+        header={true}
+        key="header[object Object]"
+        style={
+          Object {
+            "borderBottomWidth": 0,
+            "flexWrap": "wrap",
+          }
+        }
+      >
+        <ForwardRef
+          onPress={[Function]}
+          style={
+            Object {
+              "flex": 3.2,
+            }
+          }
+        >
+          <Styled(Text) />
+        </ForwardRef>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Styled(Icon)
+            name="staro"
+            style={
+              Object {
+                "marginLeft": 30,
+              }
+            }
+            type="AntDesign"
+          />
+          <Styled(Text)
+            style={
+              Object {
+                "color": "#000000",
+                "marginTop": 4,
+              }
+            }
+          >
+            0
+          </Styled(Text)>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "marginLeft": 50,
+              "marginRight": -10,
+            }
+          }
+        >
+          <Styled(Icon)
+            name="code-fork"
+            type="FontAwesome"
+          />
+          <Styled(Text)
+            style={
+              Object {
+                "color": "#000000",
+                "marginLeft": -7,
+                "marginTop": 4,
+              }
+            }
+          >
+            0
+          </Styled(Text)>
+        </View>
+      </Styled(CardItem)>
+      <Styled(CardItem)
+        key="body[object Object]"
+      >
+        <Styled(Text)>
+          No description
+        </Styled(Text)>
+      </Styled(CardItem)>
+      <Styled(CardItem)
+        bordered={true}
+        footer={true}
+        key="footer[object Object]"
+        style={
+          Object {
+            "borderTopWidth": 0,
+          }
+        }
+      >
+        <Styled(Left)>
+          <Styled(Icon)
+            name="primitive-dot"
+            style={
+              Object {
+                "color": "#FFFFFF",
+              }
+            }
+            type="Octicons"
+          />
+          <Styled(Text)>
+            unknown
+          </Styled(Text)>
+        </Styled(Left)>
+        <Styled(Right)>
+          <Styled(Text)>
+            last updated
+          </Styled(Text)>
+          <TimeAgo
+            hideAgo={false}
+            interval={60000}
+            time={Date { NaN }}
+          />
+        </Styled(Right)>
+      </Styled(CardItem)>
+    </Styled(Card)>
+  </Styled(Content)>
+</Styled(Container)>
+`;

@@ -1,0 +1,478 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test profile render when api is down 1`] = `
+<Styled(Container)>
+  <LoadingTheme
+    visibility={true}
+  />
+  <View
+    style={
+      Object {
+        "backgroundColor": "#00BFFF",
+        "height": 200,
+      }
+    }
+  >
+    <Styled(Header)
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderBottomColor": "transparent",
+        }
+      }
+    />
+  </View>
+  <Image
+    source={
+      Object {
+        "uri": "",
+      }
+    }
+    style={
+      Object {
+        "alignSelf": "center",
+        "borderColor": "white",
+        "borderRadius": 160,
+        "borderWidth": 2,
+        "height": 125,
+        "marginTop": 130,
+        "position": "absolute",
+        "width": 125,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "marginTop": 40,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "padding": 30,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#000000",
+            "fontSize": 32,
+            "fontWeight": "600",
+            "marginBottom": 2,
+          }
+        }
+      />
+      <Text
+        style={
+          Object {
+            "color": "#696969",
+            "fontSize": 28,
+            "fontWeight": "600",
+          }
+        }
+      />
+      <Text
+        style={
+          Object {
+            "color": "#696969",
+            "fontSize": 16,
+            "marginTop": 10,
+            "textAlign": "center",
+          }
+        }
+      >
+        
+
+        Joined Github at 
+      </Text>
+      <ForwardRef
+        onPress={[Function]}
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#00BFFF",
+              "borderRadius": 30,
+              "flexDirection": "row",
+              "height": 45,
+              "justifyContent": "center",
+              "marginBottom": 20,
+              "marginTop": 10,
+              "width": 250,
+            },
+            Object {
+              "marginTop": 20,
+            },
+          ]
+        }
+      >
+        <Text>
+          Repositories: 
+        </Text>
+      </ForwardRef>
+      <ForwardRef
+        onPress={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#00BFFF",
+            "borderRadius": 30,
+            "flexDirection": "row",
+            "height": 45,
+            "justifyContent": "center",
+            "marginBottom": 20,
+            "marginTop": 10,
+            "width": 250,
+          }
+        }
+      >
+        <Text>
+          Follower: 
+        </Text>
+      </ForwardRef>
+      <ForwardRef
+        onPress={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#00BFFF",
+            "borderRadius": 30,
+            "flexDirection": "row",
+            "height": 45,
+            "justifyContent": "center",
+            "marginBottom": 20,
+            "marginTop": 10,
+            "width": 250,
+          }
+        }
+      >
+        <Text>
+          Following: 
+        </Text>
+      </ForwardRef>
+    </View>
+  </View>
+</Styled(Container)>
+`;
+
+exports[`test profile render when api returns bad format data 1`] = `
+<Styled(Container)>
+  <LoadingTheme
+    visibility={true}
+  />
+  <View
+    style={
+      Object {
+        "backgroundColor": "#00BFFF",
+        "height": 200,
+      }
+    }
+  >
+    <Styled(Header)
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderBottomColor": "transparent",
+        }
+      }
+    />
+  </View>
+  <Image
+    source={
+      Object {
+        "uri": "",
+      }
+    }
+    style={
+      Object {
+        "alignSelf": "center",
+        "borderColor": "white",
+        "borderRadius": 160,
+        "borderWidth": 2,
+        "height": 125,
+        "marginTop": 130,
+        "position": "absolute",
+        "width": 125,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "marginTop": 40,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "padding": 30,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#000000",
+            "fontSize": 32,
+            "fontWeight": "600",
+            "marginBottom": 2,
+          }
+        }
+      />
+      <Text
+        style={
+          Object {
+            "color": "#696969",
+            "fontSize": 28,
+            "fontWeight": "600",
+          }
+        }
+      />
+      <Text
+        style={
+          Object {
+            "color": "#696969",
+            "fontSize": 16,
+            "marginTop": 10,
+            "textAlign": "center",
+          }
+        }
+      >
+        
+
+        Joined Github at 
+      </Text>
+      <ForwardRef
+        onPress={[Function]}
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#00BFFF",
+              "borderRadius": 30,
+              "flexDirection": "row",
+              "height": 45,
+              "justifyContent": "center",
+              "marginBottom": 20,
+              "marginTop": 10,
+              "width": 250,
+            },
+            Object {
+              "marginTop": 20,
+            },
+          ]
+        }
+      >
+        <Text>
+          Repositories: 
+        </Text>
+      </ForwardRef>
+      <ForwardRef
+        onPress={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#00BFFF",
+            "borderRadius": 30,
+            "flexDirection": "row",
+            "height": 45,
+            "justifyContent": "center",
+            "marginBottom": 20,
+            "marginTop": 10,
+            "width": 250,
+          }
+        }
+      >
+        <Text>
+          Follower: 
+        </Text>
+      </ForwardRef>
+      <ForwardRef
+        onPress={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#00BFFF",
+            "borderRadius": 30,
+            "flexDirection": "row",
+            "height": 45,
+            "justifyContent": "center",
+            "marginBottom": 20,
+            "marginTop": 10,
+            "width": 250,
+          }
+        }
+      >
+        <Text>
+          Following: 
+        </Text>
+      </ForwardRef>
+    </View>
+  </View>
+</Styled(Container)>
+`;
+
+exports[`test profile renders correctly 1`] = `
+<Styled(Container)>
+  <LoadingTheme
+    visibility={true}
+  />
+  <View
+    style={
+      Object {
+        "backgroundColor": "#00BFFF",
+        "height": 200,
+      }
+    }
+  >
+    <Styled(Header)
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderBottomColor": "transparent",
+        }
+      }
+    />
+  </View>
+  <Image
+    source={
+      Object {
+        "uri": "",
+      }
+    }
+    style={
+      Object {
+        "alignSelf": "center",
+        "borderColor": "white",
+        "borderRadius": 160,
+        "borderWidth": 2,
+        "height": 125,
+        "marginTop": 130,
+        "position": "absolute",
+        "width": 125,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "marginTop": 40,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "padding": 30,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#000000",
+            "fontSize": 32,
+            "fontWeight": "600",
+            "marginBottom": 2,
+          }
+        }
+      />
+      <Text
+        style={
+          Object {
+            "color": "#696969",
+            "fontSize": 28,
+            "fontWeight": "600",
+          }
+        }
+      />
+      <Text
+        style={
+          Object {
+            "color": "#696969",
+            "fontSize": 16,
+            "marginTop": 10,
+            "textAlign": "center",
+          }
+        }
+      >
+        
+
+        Joined Github at 
+      </Text>
+      <ForwardRef
+        onPress={[Function]}
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#00BFFF",
+              "borderRadius": 30,
+              "flexDirection": "row",
+              "height": 45,
+              "justifyContent": "center",
+              "marginBottom": 20,
+              "marginTop": 10,
+              "width": 250,
+            },
+            Object {
+              "marginTop": 20,
+            },
+          ]
+        }
+      >
+        <Text>
+          Repositories: 
+        </Text>
+      </ForwardRef>
+      <ForwardRef
+        onPress={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#00BFFF",
+            "borderRadius": 30,
+            "flexDirection": "row",
+            "height": 45,
+            "justifyContent": "center",
+            "marginBottom": 20,
+            "marginTop": 10,
+            "width": 250,
+          }
+        }
+      >
+        <Text>
+          Follower: 
+        </Text>
+      </ForwardRef>
+      <ForwardRef
+        onPress={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#00BFFF",
+            "borderRadius": 30,
+            "flexDirection": "row",
+            "height": 45,
+            "justifyContent": "center",
+            "marginBottom": 20,
+            "marginTop": 10,
+            "width": 250,
+          }
+        }
+      >
+        <Text>
+          Following: 
+        </Text>
+      </ForwardRef>
+    </View>
+  </View>
+</Styled(Container)>
+`;
