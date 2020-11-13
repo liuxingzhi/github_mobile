@@ -54,6 +54,11 @@
     "ts-node": "^9.0.0"
   },
   "jest": {
+    "testEnvironment": "enzyme",
+    "testEnvironmentOptions": {
+      "enzymeAdapter": "react16"
+    },
+    "testURL": "http://localhost/",
     "preset": "jest-expo",
     "cacheDirectory": "./cache",
     "coveragePathIgnorePatterns": [

@@ -109,6 +109,7 @@ exports[`test profile render when api is down 1`] = `
             },
           ]
         }
+        testID="Repo"
       >
         <Text>
           Repositories: 
@@ -129,6 +130,7 @@ exports[`test profile render when api is down 1`] = `
             "width": 250,
           }
         }
+        testID="Follower"
       >
         <Text>
           Follower: 
@@ -149,6 +151,7 @@ exports[`test profile render when api is down 1`] = `
             "width": 250,
           }
         }
+        testID="Following"
       >
         <Text>
           Following: 
@@ -268,6 +271,7 @@ exports[`test profile render when api returns bad format data 1`] = `
             },
           ]
         }
+        testID="Repo"
       >
         <Text>
           Repositories: 
@@ -288,6 +292,7 @@ exports[`test profile render when api returns bad format data 1`] = `
             "width": 250,
           }
         }
+        testID="Follower"
       >
         <Text>
           Follower: 
@@ -308,6 +313,7 @@ exports[`test profile render when api returns bad format data 1`] = `
             "width": 250,
           }
         }
+        testID="Following"
       >
         <Text>
           Following: 
@@ -427,6 +433,7 @@ exports[`test profile renders correctly 1`] = `
             },
           ]
         }
+        testID="Repo"
       >
         <Text>
           Repositories: 
@@ -447,6 +454,7 @@ exports[`test profile renders correctly 1`] = `
             "width": 250,
           }
         }
+        testID="Follower"
       >
         <Text>
           Follower: 
@@ -467,6 +475,7 @@ exports[`test profile renders correctly 1`] = `
             "width": 250,
           }
         }
+        testID="Following"
       >
         <Text>
           Following: 

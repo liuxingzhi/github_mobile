@@ -13,7 +13,6 @@ import FollowerScreen from "../screens/Following";
 import FollowingScreen from "../screens/Follower";
 import {RepoModel} from "../model/RepoModel";
 import {UserModel} from "../model/UserModel";
-import ShallowWrapper from "enzyme/imgs/ShallowWrapper";
 
 
 const fakeUserResponse = JSON.stringify({
