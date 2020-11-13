@@ -1,4 +1,4 @@
-const {UserModel} = require("../model/UserModel")
+const {UserModel} = require("../src/model/UserModel")
 
 it("User model test basic", () => {
     const user = new UserModel({

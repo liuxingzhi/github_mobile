@@ -1,6 +1,6 @@
-const {UserModel} = require("../model/UserModel")
-const {RepoModel} = require("../model/RepoModel")
-const {githubQuery, parseNodesToModel} = require("../utils/util")
+const {UserModel} = require("../src/model/UserModel")
+const {RepoModel} = require("../src/model/RepoModel")
+const {githubQuery, parseNodesToModel} = require("../src/utils/util")
 
 it("User test node parsing for User", () => {
     let nodes_count = 5;

@@ -6,14 +6,14 @@ import Adapter from 'enzyme-adapter-react-16';
 
 Enzyme.configure({adapter: new Adapter()});
 
-import {githubQuery} from '../utils/util';
-import ProfileScreen from "../screens/Profile";
-import RepositoryScreen from "../screens/Repo";
-import FollowerScreen from "../screens/Following";
-import FollowingScreen from "../screens/Follower";
-import {RepoModel} from "../model/RepoModel";
-import {UserModel} from "../model/UserModel";
-import ShallowWrapper from "enzyme/imgs/ShallowWrapper";
+import {githubQuery} from '../src/utils/util';
+import ProfileScreen from "../src/screens/Profile";
+import RepositoryScreen from "../src/screens/Repo";
+import FollowerScreen from "../src/screens/Following";
+import FollowingScreen from "../src/screens/Follower";
+import {RepoModel} from "../src/model/RepoModel";
+import {UserModel} from "../src/model/UserModel";
+import ShallowWrapper from "enzyme/src/ShallowWrapper";
 
 const fakeFollowerResponse = JSON.stringify({
         "data":

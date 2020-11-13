@@ -1,6 +1,6 @@
 node_modules/**/*
 .expo/*
-.expo-shared/*
+.expo-shared
 npm-debug.*
 *.jks
 *.p8
@@ -9,12 +9,11 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
-package-lock.json
 
 # macOS
 .DS_Store
 token
-env.js
+src/env.js
 
 cache
 

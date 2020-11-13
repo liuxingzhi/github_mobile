@@ -17,7 +17,7 @@ export function LoadingTheme({visibility}) {
                 animationStyle={styles.lottie}
                 visible={visibility}
                 overlayColor="rgba(255,255,255,0.75)"
-                source={require("../styles/loading-animation.json")}
+                source={require("../../styles/loading-animation.json")}
                 speed={1}
             />
         </View>

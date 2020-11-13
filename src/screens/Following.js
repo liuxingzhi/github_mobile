@@ -1,35 +1,21 @@
-import {ActivityIndicator, StyleSheet, TouchableOpacity, View} from "react-native";
+import {TouchableOpacity, View} from "react-native";
+import * as React from "react";
 import axios from "axios";
-import React, {Component} from 'react';
-import {
-    Container,
-    Header,
-    Content,
-    List,
-    ListItem,
-    Left,
-    Right,
-    Body,
-    Thumbnail,
-    Text,
-    Title,
-    Button,
-    Icon
-} from 'native-base';
+import {Body, Container, Content, Header, Left, List, ListItem, Text, Thumbnail} from "native-base";
 import {CustomerHeader} from "./CustomerHeader";
-import {githubQuery, parseNodesToModel} from "../utils/util";
 import {emptyUserData, UserModel} from "../model/UserModel";
+import {githubQuery, parseNodesToModel} from "../utils/util";
 import {LoadingTheme} from "./LoadingTheme";
 
-export default class FollowerScreen extends React.Component {
+export default class FollowingScreen extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             isLoading: true,
-            loadingErr: false,
+            followers: []
         }
-        this.followers = [new UserModel(emptyUserData)]
-        this.navTitle = "Follower"
+        this.navTitle = "Following"
+        this.following = [new UserModel(emptyUserData)]
         this.currentUser = ""
         this.filterCriteria = ""
     }
@@ -50,7 +36,7 @@ export default class FollowerScreen extends React.Component {
 
 
     loadData() {
-        if (!this.setNewUser()){
+        if (!this.setNewUser()) {
             return
         }
         this.setState({isLoading: true, loadingErr: false})
@@ -59,7 +45,7 @@ export default class FollowerScreen extends React.Component {
           user(login: "${this.currentUser}") {
             login
             bio
-            followers(first: 100) {
+            following(first: 100) {
               nodes {
                 login
                 bio
@@ -74,18 +60,19 @@ export default class FollowerScreen extends React.Component {
 
         githubQuery(query)
             .then(response => {
-                // console.log(response.data.user.followers.nodes)
-                let userDataArray = response.data.user.followers.nodes
-                this.followers = parseNodesToModel(userDataArray, UserModel)
-                this.followers.sort(function (a, b) {
+                // put data into data model
+                let userDataArray = response.data.user.following.nodes
+                this.following = parseNodesToModel(userDataArray, UserModel)
+                this.following.sort(function (a, b) {
                     return a.publicReposCount - b.publicReposCount
                 })
-                // console.log(this.followers)
+                // console.log(this.following)
                 this.setState({isLoading: false, loadingErr: false})
             })
             .catch(error => {
-                console.log(error)
-                this.followers = [new UserModel(emptyUserData)]
+                // console.log(error)
+                // return empty model when error
+                this.following = [new UserModel(emptyUserData)]
                 this.setState({isLoading: false, loadingErr: true})
             })
 
@@ -109,7 +96,8 @@ export default class FollowerScreen extends React.Component {
                 <Content>
                     <List>
                         {
-                            this.followers.map((user, key) => {
+                            this.following.map((user, key) => {
+
                                 return user.searchKeyCaseInsensitive(this.filterCriteria)
                                     ? (
                                         <ListItem avatar key={key}>
@@ -133,8 +121,7 @@ export default class FollowerScreen extends React.Component {
                                         </ListItem>
                                     )
                                     : null
-                                }
-                            )
+                            })
                         }
                     </List>
                 </Content>
@@ -142,5 +129,4 @@ export default class FollowerScreen extends React.Component {
         );
     }
 }
-
 

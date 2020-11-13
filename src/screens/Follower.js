@@ -1,21 +1,35 @@
-import {TouchableOpacity, View} from "react-native";
-import * as React from "react";
+import {ActivityIndicator, StyleSheet, TouchableOpacity, View} from "react-native";
 import axios from "axios";
-import {Body, Container, Content, Header, Left, List, ListItem, Text, Thumbnail} from "native-base";
+import React, {Component} from 'react';
+import {
+    Container,
+    Header,
+    Content,
+    List,
+    ListItem,
+    Left,
+    Right,
+    Body,
+    Thumbnail,
+    Text,
+    Title,
+    Button,
+    Icon
+} from 'native-base';
 import {CustomerHeader} from "./CustomerHeader";
-import {emptyUserData, UserModel} from "../model/UserModel";
 import {githubQuery, parseNodesToModel} from "../utils/util";
+import {emptyUserData, UserModel} from "../model/UserModel";
 import {LoadingTheme} from "./LoadingTheme";
 
-export default class FollowingScreen extends React.Component {
+export default class FollowerScreen extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             isLoading: true,
-            followers: []
+            loadingErr: false,
         }
-        this.navTitle = "Following"
-        this.following = [new UserModel(emptyUserData)]
+        this.followers = [new UserModel(emptyUserData)]
+        this.navTitle = "Follower"
         this.currentUser = ""
         this.filterCriteria = ""
     }
@@ -34,9 +48,11 @@ export default class FollowingScreen extends React.Component {
         return false
     }
 
-
+    /**
+     * loading data
+     */
     loadData() {
-        if (!this.setNewUser()) {
+        if (!this.setNewUser()){
             return
         }
         this.setState({isLoading: true, loadingErr: false})
@@ -45,7 +61,7 @@ export default class FollowingScreen extends React.Component {
           user(login: "${this.currentUser}") {
             login
             bio
-            following(first: 100) {
+            followers(first: 100) {
               nodes {
                 login
                 bio
@@ -58,27 +74,28 @@ export default class FollowingScreen extends React.Component {
           }
         }`
 
+
         githubQuery(query)
             .then(response => {
-                // console.log(response.data.user.following.nodes)
-                let userDataArray = response.data.user.following.nodes
-                this.following = parseNodesToModel(userDataArray, UserModel)
-                this.following.sort(function (a, b) {
+                // put data into data model
+                let userDataArray = response.data.user.followers.nodes
+                this.followers = parseNodesToModel(userDataArray, UserModel)
+                this.followers.sort(function (a, b) {
                     return a.publicReposCount - b.publicReposCount
                 })
-                // console.log(this.following)
+                // console.log(this.followers)
                 this.setState({isLoading: false, loadingErr: false})
             })
             .catch(error => {
-                console.log(error)
-                this.following = [new UserModel(emptyUserData)]
+                // console.log(error)
+                // return empty model when error
+                this.followers = [new UserModel(emptyUserData)]
                 this.setState({isLoading: false, loadingErr: true})
             })
 
     }
 
     componentDidMount() {
-        // this._isMounted = true;
         this.props.navigation.addListener('focus', () => {
             this.loadData()
         })
@@ -95,8 +112,7 @@ export default class FollowingScreen extends React.Component {
                 <Content>
                     <List>
                         {
-                            this.following.map((user, key) => {
-
+                            this.followers.map((user, key) => {
                                 return user.searchKeyCaseInsensitive(this.filterCriteria)
                                     ? (
                                         <ListItem avatar key={key}>
@@ -120,7 +136,8 @@ export default class FollowingScreen extends React.Component {
                                         </ListItem>
                                     )
                                     : null
-                            })
+                                }
+                            )
                         }
                     </List>
                 </Content>
@@ -128,4 +145,5 @@ export default class FollowingScreen extends React.Component {
         );
     }
 }
+
 

@@ -8,8 +8,8 @@ import toJSON from 'enzyme-to-json'
 import {TouchableOpacity } from "react-native";
 import 'react-native';
 import 'jest-enzyme';
-import Profile from "../screens/Profile";
-import {CustomerHeader} from "../screens/CustomerHeader"
+import Profile from "../src/screens/Profile";
+import {CustomerHeader} from "../src/screens/CustomerHeader"
 /**
  * Set up DOM in node.js environment for Enzyme to mount to
  */
@@ -50,9 +50,9 @@ it('test navigation buttons are properly rendered', async () => {
                                                returnToPreviousUserHandler={(...args) => null}
                                                hasPreviousUser={(...args) => null}
                                                getCurrentUser={(...args) => null}/>);
-    expect(wrapper.find('TouchableOpacity').at(0).prop('testID')).toBe('Repo')
-    expect(wrapper.find('TouchableOpacity').at(1).prop('testID')).toBe('Follower')
-    expect(wrapper.find('TouchableOpacity').at(2).prop('testID')).toBe('Following')
+    expect(wrapper.find('TouchableOpacity').at(0).prop('testID')).toBe('repo')
+    expect(wrapper.find('TouchableOpacity').at(1).prop('testID')).toBe('follower')
+    expect(wrapper.find('TouchableOpacity').at(2).prop('testID')).toBe('following')
 });
 
 
@@ -83,7 +83,7 @@ it('test following, follower and repo has navigation header rendered' +
     jest.clearAllMocks();
     const wrapper = mount(<CustomerHeader navigation={mockNavigation}/>);
 
-    expect(wrapper.find('TouchableOpacity').at(0).prop('testID')).toBe('Profile')
+    expect(wrapper.find('TouchableOpacity').at(0).prop('testID')).toBe('profile')
 });
 
 it('test following, follower and repo has navigation header and the button works as intended' +

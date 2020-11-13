@@ -1,11 +1,12 @@
 import * as React from "react";
 import axios from "axios";
-import {ActivityIndicator, Image, StyleSheet, Text, TouchableOpacity, View, Linking} from "react-native";
+import {ActivityIndicator, Image, Linking, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import {Overlay} from "react-native-elements"
 import {CustomerHeader} from "./CustomerHeader";
-import {Card, Header, Icon, Left, Button, Right, Container} from "native-base";
+import {Card, Header, Icon, Left} from "native-base";
+import {Button, Right, Container} from "native-base";
 import {githubQuery} from "../utils/util";
-import AnimatedLoader from "react-native-animated-loader";
+// import AnimatedLoader from "react-native-animated-loader";
 import {LoadingTheme} from "./LoadingTheme";
 import {UserModel, emptyUserData} from "../model/UserModel"
 
@@ -61,12 +62,14 @@ export default class ProfileScreen extends React.Component {
 
         githubQuery(query)
             .then(response => {
+                // put data into data model
                 let userData = response.data.user
                 this.user = new UserModel(userData)
                 this.setState({isLoading: false, loadingErr: false})
             })
             .catch(error => {
-                console.log(error)
+                // return empty model when error
+                // console.log(error)
                 this.user = new UserModel(emptyUserData)
                 this.setState({isLoading: false, loadingErr: true})
             })
@@ -132,17 +135,17 @@ export default class ProfileScreen extends React.Component {
                         <Text style={styles.description}>{this.user.bio}{"\n"}
                             Joined Github at {this.user.createDate}</Text>
 
-                        <TouchableOpacity testID="Repo" style={[styles.buttonContainer, {marginTop: 20}]} onPress={() => {
+                        <TouchableOpacity testID="repo" style={[styles.buttonContainer, {marginTop: 20}]} onPress={() => {
                             this.props.navigation.navigate('Repo')
                         }}>
                             <Text>Repositories: {this.user.publicReposCount}</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity testID="Follower" style={styles.buttonContainer} onPress={() => {
+                        <TouchableOpacity testID="follower" style={styles.buttonContainer} onPress={() => {
                             this.props.navigation.navigate('Follower')
                         }}>
                             <Text>Follower: {this.user.followersCount}</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity testID="Following" style={styles.buttonContainer} onPress={() => {
+                        <TouchableOpacity testID="following" style={styles.buttonContainer} onPress={() => {
                             this.props.navigation.navigate('Following')
                         }}>
                             <Text>Following: {this.user.followingCount}</Text>

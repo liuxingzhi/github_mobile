@@ -5,11 +5,12 @@
  * loadFollowingData
  * loadRepoData
  */
-import {githubQuery, parseNodesToModel} from "./util";
-import {emptyUserData, UserModel} from "../model/UserModel";
-import {emptyRepoData, RepoModel} from "../model/RepoModel";
+import {githubQuery, parseNodesToModel} from "./util.js";
+import {emptyUserData, UserModel} from "../model/UserModel.js";
+import {emptyRepoData, RepoModel} from "../model/RepoModel.js";
 
-function loadUserData(username) {
+
+async function loadUserData(username) {
     let query = `query { 
                 user(login:"${username}") { 
                     login
@@ -31,22 +32,26 @@ function loadUserData(username) {
                 }
         }`
 
-    githubQuery(query)
-        .then(response => {
-            let userData = response.data.user
-            return new UserModel(userData)
-        })
-        .catch(error => {
-            console.log(error)
-            return new UserModel(emptyUserData)
-        })
+    try {
+        // load data
+        let response = await githubQuery(query);
+        let userData = response.data.user
+        return new UserModel(userData)
+    }catch (error){
+        // use empty data when error
+        // console.log(error)
+        return new UserModel(emptyUserData)
+    }
 }
 
-function loadRepoData(username) {
+async function loadRepoData(username) {
     let query = `query {
                         user(login:"${username}") {
                             repositories(first: 100, orderBy: {field: UPDATED_AT, direction: DESC}){
                                 nodes{
+                                    owner{
+                                      login
+                                    }
                                     name
                                     url
                                     description
@@ -63,19 +68,20 @@ function loadRepoData(username) {
                             }
                         }
                     }`
-    githubQuery(query)
-        .then(response => {
-            let repoDataArray = response.data.user.repositories.nodes
-            let repos = parseNodesToModel(repoDataArray, RepoModel)
-            return repos
-        })
-        .catch(error => {
-            console.log(error)
-            return [new RepoModel(emptyRepoData)]
-        });
+    try {
+        // load data
+        let response = await githubQuery(query);
+        let repoDataArray = response.data.user.repositories.nodes
+        let repos = parseNodesToModel(repoDataArray, RepoModel)
+        return repos
+    }catch (error){
+        // use empty data when error
+        // console.log(error)
+        return [new RepoModel(emptyRepoData)]
+    }
 }
 
-function loadFollowerData(username) {
+async function loadFollowerData(username) {
     let query = `
         {
           user(login: "${username}") {
@@ -85,6 +91,7 @@ function loadFollowerData(username) {
               nodes {
                 login
                 bio
+                name
                 avatarUrl
                 repositories {
                   totalCount
@@ -94,31 +101,32 @@ function loadFollowerData(username) {
           }
         }`
 
-    githubQuery(query)
-        .then(response => {
-            // console.log(response.data.user.followers.nodes)
-            let userDataArray = response.data.user.followers.nodes
-            let userList = parseNodesToModel(userDataArray, UserModel)
-            userList.sort(function (a, b) {
-                return a.publicReposCount - b.publicReposCount
-            })
-            return userList
+    try {
+        // load data
+        let response = await githubQuery(query);
+        let userDataArray = response.data.user.followers.nodes
+        let userList = parseNodesToModel(userDataArray, UserModel)
+        userList.sort(function (a, b) {
+            return a.publicReposCount - b.publicReposCount
         })
-        .catch(error => {
-            console.log(error)
-            return [new UserModel(emptyUserData)]
-        })
+        return userList
+    }catch (error){
+        // use empty data when error
+        // console.log(error)
+        return [new UserModel(emptyUserData)]
+    }
 }
 
-function loadFollowingData() {
+async function loadFollowingData(username) {
     let query = `
         {
-          user(login: "${this.currentUser}") {
+          user(login: "${username}") {
             login
             bio
             following(first: 100) {
               nodes {
                 login
+                name
                 bio
                 avatarUrl
                 repositories {
@@ -129,20 +137,20 @@ function loadFollowingData() {
           }
         }`
 
-    githubQuery(query)
-        .then(response => {
-            // console.log(response.data.user.followers.nodes)
-            let userDataArray = response.data.user.following.nodes
-            let userList = parseNodesToModel(userDataArray, UserModel)
-            userList.sort(function (a, b) {
-                return a.publicReposCount - b.publicReposCount
-            })
-            return userList
+    try {
+        // load data
+        let response = await githubQuery(query);
+        let userDataArray = response.data.user.following.nodes
+        let userList = parseNodesToModel(userDataArray, UserModel)
+        userList.sort(function (a, b) {
+            return a.publicReposCount - b.publicReposCount
         })
-        .catch(error => {
-            console.log(error)
-            return [new UserModel(emptyUserData)]
-        })
+        return userList
+    }catch (error){
+        // use empty data when error
+        // console.log(error)
+        return [new UserModel(emptyUserData)]
+    }
 }
 
 export {loadFollowerData, loadFollowingData, loadRepoData, loadUserData}

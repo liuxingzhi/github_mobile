@@ -15,7 +15,7 @@ export function CustomerHeader({setFilterCriteriaHandler, ...props}) {
     return (
         <Header searchBar>
             <Left style={{flex: 0.4, marginLeft: 3}}>
-                <TouchableOpacity testID='Profile' transparent onPress={() => {
+                <TouchableOpacity transparent testID='profile' onPress={() => {
                     props.navigation.navigate('Profile')
                 }}>
                     <Icon name='arrow-back'/>

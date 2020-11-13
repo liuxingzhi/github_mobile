@@ -54,6 +54,12 @@
     "ts-node": "^9.0.0"
   },
   "jest": {
+    "testEnvironment": "enzyme",
+    "testEnvironmentOptions": {
+      "enzymeAdapter": "react16"
+    },
+    "verbose": true,
+    "testURL": "http://localhost/",
     "preset": "jest-expo",
     "cacheDirectory": "./cache",
     "coveragePathIgnorePatterns": [
@@ -74,5 +80,8 @@
       "/node_modules/(?!native-base)/(?!react-native|react-clone-referenced-element|react-navigation)"
     ]
   },
-  "private": true
+  "private": true,
+  "bin": {
+    "gh-viewer": "node /src/cli.js"
+  }
 }

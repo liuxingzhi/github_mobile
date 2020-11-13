@@ -1,6 +1,13 @@
 {
   "expo": {
     "name": "github_mobile",
+    "description": "a mobile app for viewing github content",
+    "privacy": "public",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "slug": "github_mobile",
     "version": "1.0.0",
     "orientation": "portrait",

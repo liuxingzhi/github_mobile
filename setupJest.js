@@ -1,4 +1,10 @@
 require('jest-fetch-mock').enableMocks()
+import {ActivityIndicator, Image, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {Overlay} from "react-native-elements"
+import {CustomerHeader} from "./src/screens/CustomerHeader"
+import {Card, Header, Icon, Left} from "native-base";
+import {Button, Right, Container} from "native-base";
+
 
 function setupTimeTravelForRNAnimated() {
     const MockDate = require('mockdate');
@@ -28,6 +34,5 @@ function setupTimeTravelForRNAnimated() {
     }
 }
 setupTimeTravelForRNAnimated();
-
 
 

@@ -20,7 +20,7 @@ import {color} from "react-native-reanimated";
 import {StyleSheet} from "react-native";
 import {View} from "react-native"
 import {CustomerHeader} from "./CustomerHeader";
-import * as Constants from "../styles/language-color"
+import * as Constants from "../../styles/language-color"
 import {githubQuery, parseNodesToModel} from "../utils/util"
 import {LoadingTheme} from "./LoadingTheme";
 import {RepoModel, emptyRepoData} from "../model/RepoModel"
@@ -80,6 +80,7 @@ export default class RepositoryScreen extends React.Component {
                         }
                     }`
         githubQuery(query)
+            // put data into data model
             .then(response => {
                 // console.log('gggg response', response)
                 let repoDataArray = response.data.user.repositories.nodes
@@ -87,7 +88,8 @@ export default class RepositoryScreen extends React.Component {
                 this.setState({isLoading: false, loadingErr: false})
             })
             .catch(error => {
-                console.log(error)
+                // return empty model when error
+                // console.log(error)
                 this.repos = [new RepoModel(emptyRepoData)]
                 this.setState({
                     isLoading: false,

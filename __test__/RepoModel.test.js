@@ -1,4 +1,4 @@
-const {RepoModel} = require("../model/RepoModel")
+const {RepoModel} = require("../src/model/RepoModel")
 
 it("Repo model test, basic", () => {
     const repo = new RepoModel({

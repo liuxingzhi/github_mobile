@@ -1,3 +1,7 @@
+/**
+ * default empty data structure for user
+ * @type {{followers: {totalCount: string}, avatarUrl: string, websiteUrl: string, repositories: {totalCount: string}, following: {totalCount: string}, name: string, bio: string, login: string, email: string, createDate: string}}
+ */
 const emptyUserData = {
     avatarUrl: '',
     name: '',
@@ -11,6 +15,9 @@ const emptyUserData = {
     createDate: '',
 }
 
+/**
+ * Class model for repository, used by profile follower, following screen
+ */
 class UserModel {
     constructor(userData = emptyUserData) {
         if (userData == null){

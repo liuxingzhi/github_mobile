@@ -1,5 +1,6 @@
-import * as ENV from "../env"
-import {emptyUserData, UserModel} from "../model/UserModel";
+import * as ENV from "../env.js"
+import fetch from 'cross-fetch'
+import {emptyUserData, UserModel} from "../model/UserModel.js"
 
 /**
  * A wrap to the github API call

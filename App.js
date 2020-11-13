@@ -7,11 +7,11 @@ import {NavigationContainer} from '@react-navigation/native';
 import axios from 'axios';
 import Moment from 'moment';
 import Icon from "react-native-vector-icons";
-import ProfileScreen from "./screens/Profile";
-import FollowerScreen from "./screens/Follower";
-import FollowingScreen from "./screens/Following";
-import RepositoryScreen from "./screens/Repo";
-import {loadFollowerData, loadFollowingData, loadRepoData, loadUserData} from "./utils/service"
+import ProfileScreen from "./src/screens/Profile";
+import FollowerScreen from "./src/screens/Follower";
+import FollowingScreen from "./src/screens/Following";
+import RepositoryScreen from "./src/screens/Repo";
+import {loadFollowerData, loadFollowingData, loadRepoData, loadUserData} from "./src/utils/service"
 const Drawer = createDrawerNavigator();
 const defaultUsername = 'liuxingzhi'
 
