@@ -1,10 +1,9 @@
 import * as React from "react";
 import axios from "axios";
-import {ActivityIndicator, Image, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {ActivityIndicator, Image, StyleSheet, Text, TouchableOpacity, View, Linking} from "react-native";
 import {Overlay} from "react-native-elements"
 import {CustomerHeader} from "./CustomerHeader";
-import {Card, Header, Icon, Left} from "native-base";
-import {Button, Right, Container} from "native-base";
+import {Card, Header, Icon, Left, Button, Right, Container} from "native-base";
 import {githubQuery} from "../utils/util";
 import AnimatedLoader from "react-native-animated-loader";
 import {LoadingTheme} from "./LoadingTheme";
