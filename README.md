@@ -60,6 +60,6 @@ There are two kinds of navigation in this app
 ![](imgs/navigation-page.jpg)
 
 ### Additional Functionality
-1.Support navigating to other users and navigating back.
-2.Support search in repos, following, and followers pages.
-3.Loading alert.
+1. Support navigating to other users and navigating back.
+2. Support search in repos, following, and followers pages.
+3. Loading alert.
